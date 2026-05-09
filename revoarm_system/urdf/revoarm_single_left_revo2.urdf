@@ -251,13 +251,13 @@
   <joint name="left_connector_tip_joint" type="fixed">
     <parent link="left_connector_link" />
     <child link="left_connector_tip" />
-    <origin rpy="0 3.14 -1.57" xyz="0.0000760 0.0001518 -0.0583" />
+    <origin rpy="0 3.14 0" xyz="0.0000760 0.0001518 -0.0583" />
   </joint>
   
   <joint name="left_hand_base_joint" type="fixed">
     <parent link="left_connector_tip" />
     <child link="left_hand_base_link" />
-    <origin rpy="0 0 0" xyz="0 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 -0.0118" />
   </joint>
   <link name="left_hand_base_link">
     <inertial>
