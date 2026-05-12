@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="revoarm_bimanual">
+  <compiler angle="radian" />
+  <asset>
+    <mesh name="base_link" content_type="model/stl" file="../meshes/body/visual/bimanual/base_link.STL" />
+    <mesh name="left_arm_link1" content_type="model/stl" file="../meshes/arm/visual/left_arm_link1.STL" />
+    <mesh name="left_arm_link2" content_type="model/stl" file="../meshes/arm/visual/left_arm_link2.STL" />
+    <mesh name="left_arm_link3" content_type="model/stl" file="../meshes/arm/visual/left_arm_link3.STL" />
+    <mesh name="left_arm_link4" content_type="model/stl" file="../meshes/arm/visual/left_arm_link4.STL" />
+    <mesh name="left_arm_link5" content_type="model/stl" file="../meshes/arm/visual/left_arm_link5.STL" />
+    <mesh name="left_arm_link6" content_type="model/stl" file="../meshes/arm/visual/left_arm_link6.STL" />
+    <mesh name="right_arm_link1" content_type="model/stl" file="../meshes/arm/visual/right_arm_link1.STL" />
+    <mesh name="right_arm_link2" content_type="model/stl" file="../meshes/arm/visual/right_arm_link2.STL" />
+    <mesh name="right_arm_link3" content_type="model/stl" file="../meshes/arm/visual/right_arm_link3.STL" />
+    <mesh name="right_arm_link4" content_type="model/stl" file="../meshes/arm/visual/right_arm_link4.STL" />
+    <mesh name="right_arm_link5" content_type="model/stl" file="../meshes/arm/visual/right_arm_link5.STL" />
+    <mesh name="right_arm_link6" content_type="model/stl" file="../meshes/arm/visual/right_arm_link6.STL" />
+  </asset>
+  <worldbody>
+    <body name="base" pos="0 0 0" euler="0 0 0">
+      <joint name="base_free" type="free" />
+      <geom type="mesh" rgba="0.054902 0.054902 0.054902 1" mesh="base_link" contype="0" conaffinity="0" group="1" mass="20.9229828634283" />
+      <body name="left_arm_link1" pos="0.0055 0.10424 -0.038037" quat="0.996195 0.0871543 0 0">
+        <joint name="revoarm_left_joint1" pos="0 0 0" axis="0 1 0" range="-4.1015 0.7854" actuatorfrcrange="-40 40" />
+        <geom type="mesh" rgba="1 1 1 1" mesh="left_arm_link1" contype="0" conaffinity="0" group="1" mass="0.99862" />
+        <body name="left_arm_link2" pos="0 0.06 0" quat="0.996195 -0.0871543 0 0">
+          <joint name="revoarm_left_joint2" pos="0 0 0" axis="1 0 0" range="-0.1745 3.3161" actuatorfrcrange="-40 40" />
+          <geom type="mesh" rgba="1 1 1 1" mesh="left_arm_link2" contype="0" conaffinity="0" group="1" mass="0.1942" />
+          <body name="left_arm_link3" pos="0 0 -0.099">
+            <joint name="revoarm_left_joint3" pos="0 0 0" axis="0 0 -1" range="-3.6652 0.5236" actuatorfrcrange="-27 27" />
+            <geom type="mesh" rgba="1 1 1 1" mesh="left_arm_link3" contype="0" conaffinity="0" group="1" mass="0.56897" />
+            <body name="left_arm_link4" pos="0 0 -0.121">
+              <joint name="revoarm_left_joint4" pos="0 0 0" axis="0 -1 0" range="-0.34907 2.2166" actuatorfrcrange="-27 27" />
+              <geom type="mesh" rgba="1 1 1 1" mesh="left_arm_link4" contype="0" conaffinity="0" group="1" mass="0.43039" />
+              <body name="left_arm_link5" pos="0 0 -0.0635">
+                <joint name="revoarm_left_joint5" pos="0 0 0" axis="0 0 -1" range="-3.1444 0.9044" actuatorfrcrange="-7 7" />
+                <geom type="mesh" rgba="1 1 1 1" mesh="left_arm_link5" contype="0" conaffinity="0" group="1" mass="0.80969" />
+                <body name="left_arm_link6" pos="0 0 -0.1525">
+                  <joint name="revoarm_left_joint6" pos="0 0 0" axis="-1 0 0" range="-0.64577 0.64577" actuatorfrcrange="-7 7" />
+                  <geom type="mesh" rgba="1 1 1 1" mesh="left_arm_link6" contype="0" conaffinity="0" group="1" mass="0.31466" />
+                  <body name="left_arm_link7" quat="1 -0.0009702 0 0">
+                    <inertial pos="0 0 0" mass="1e-06" diaginertia="1e-09 1e-09 1e-09" />
+                    <joint name="revoarm_left_joint7" pos="0 0 0" axis="0 -1 0" range="-1.5708 1.5708" actuatorfrcrange="-7 7" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="right_arm_link1" pos="0.0055 -0.10424 -0.038037" quat="0.996195 -0.0871543 0 0">
+        <joint name="revoarm_right_joint1" pos="0 0 0" axis="0 1 0" range="-4.1015 0.7854" actuatorfrcrange="-40 40" />
+        <geom type="mesh" rgba="0.89804 0.91765 0.92941 1" mesh="right_arm_link1" contype="0" conaffinity="0" group="1" mass="0.99862" />
+        <body name="right_arm_link2" pos="0 -0.06 0" quat="0.996195 0.0871543 0 0">
+          <joint name="revoarm_right_joint2" pos="0 0 0" axis="-1 0 0" range="-0.1745 3.3161" actuatorfrcrange="-40 40" />
+          <geom type="mesh" rgba="0.556863 0.556863 0.556863 1" mesh="right_arm_link2" contype="0" conaffinity="0" group="1" mass="0.1942" />
+          <body name="right_arm_link3" pos="0 0 -0.099">
+            <joint name="revoarm_right_joint3" pos="0 0 0" axis="0 0 1" range="-3.6652 0.5236" actuatorfrcrange="-27 27" />
+            <geom type="mesh" rgba="0.054902 0.054902 0.054902 1" mesh="right_arm_link3" contype="0" conaffinity="0" group="1" mass="0.56897" />
+            <body name="right_arm_link4" pos="0 0 -0.121">
+              <joint name="revoarm_right_joint4" pos="0 0 0" axis="0 -1 0" range="-0.34907 2.2166" actuatorfrcrange="-27 27" />
+              <geom type="mesh" rgba="0.556863 0.556863 0.556863 1" mesh="right_arm_link4" contype="0" conaffinity="0" group="1" mass="0.43039" />
+              <body name="right_arm_link5" pos="0 0 -0.0635">
+                <joint name="revoarm_right_joint5" pos="0 0 0" axis="0 0 1" range="-3.1444 0.9044" actuatorfrcrange="-7 7" />
+                <geom type="mesh" rgba="0.054902 0.054902 0.054902 1" mesh="right_arm_link5" contype="0" conaffinity="0" group="1" mass="0.80969" />
+                <body name="right_arm_link6" pos="0 0 -0.1525">
+                  <joint name="revoarm_right_joint6" pos="0 0 0" axis="1 0 0" range="-0.64577 0.64577" actuatorfrcrange="-7 7" />
+                  <geom type="mesh" rgba="0.556863 0.556863 0.556863 1" mesh="right_arm_link6" contype="0" conaffinity="0" group="1" mass="0.31466" />
+                  <body name="right_arm_link7" quat="1 0.0009702 0 0">
+                    <inertial pos="0 0 0" mass="1e-06" diaginertia="1e-09 1e-09 1e-09" />
+                    <joint name="revoarm_right_joint7" pos="0 0 0" axis="0 -1 0" range="-1.5708 1.5708" actuatorfrcrange="-7 7" />
+                  </body>
+                </body>
+              </body>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
